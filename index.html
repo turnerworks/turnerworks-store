@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Turner Works Store</title>
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif; line-height: 1.6; color: #333; }
+        .container { max-width: 1200px; margin: 0 auto; padding: 20px; }
+        header { background: linear-gradient(135deg, #1a1a2e 0%, #16213e 100%); color: white; padding: 40px 20px; text-align: center; }
+        header h1 { font-size: 2.5rem; margin-bottom: 10px; }
+        header p { font-size: 1.2rem; opacity: 0.9; }
+        .nav { display: flex; justify-content: center; gap: 20px; margin-top: 20px; flex-wrap: wrap; }
+        .nav a { color: white; text-decoration: none; padding: 10px 20px; border: 2px solid white; border-radius: 25px; transition: all 0.3s; }
+        .nav a:hover { background: white; color: #1a1a2e; }
+        .products { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 30px; padding: 40px 20px; }
+        .product-card { background: white; border-radius: 15px; box-shadow: 0 10px 30px rgba(0,0,0,0.1); overflow: hidden; transition: transform 0.3s; }
+        .product-card:hover { transform: translateY(-5px); }
+        .product-image { height: 200px; background: linear-gradient(45deg, #667eea 0%, #764ba2 100%); display: flex; align-items: center; justify-content: center; color: white; font-size: 3rem; }
+        .product-info { padding: 25px; }
+        .product-info h3 { font-size: 1.3rem; margin-bottom: 10px; }
+        .product-info p { color: #666; margin-bottom: 15px; font-size: 0.95rem; }
+        .price { font-size: 1.5rem; font-weight: bold; color: #1a1a2e; }
+        .status { display: inline-block; padding: 5px 15px; border-radius: 20px; font-size: 0.85rem; font-weight: 600; margin: 10px 0; }
+        .status.demo { background: #e3f2fd; color: #1976d2; }
+        .status.pending { background: #fff3e0; color: #f57c00; }
+        .status.waitlist { background: #f3e5f5; color: #7b1fa2; }
+        .status.coming-soon { background: #e8f5e9; color: #388e3c; }
+        .btn { display: inline-block; width: 100%; padding: 15px; background: linear-gradient(135deg, #667eea 0%, #764ba2 100%); color: white; border: none; border-radius: 8px; cursor: pointer; font-size: 1rem; font-weight: 600; text-align: center; text-decoration: none; transition: opacity 0.3s; }
+        .btn:hover { opacity: 0.9; }
+        .btn.paypal { background: #0070ba; }
+        footer { background: #1a1a2e; color: white; padding: 40px 20px; text-align: center; margin-top: 40px; }
+        footer a { color: #667eea; }
+        @media (max-width: 768px) { header h1 { font-size: 1.8rem; } .products { grid-template-columns: 1fr; } }
+        @media (max-width: 480px) { header { padding: 20px 10px; } .nav { flex-direction: column; } .nav a { width: 100%; text-align: center; } }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Turner Works Store</h1>
+        <p>Products, Services, Subscriptions & Digital Goods</p>
+        <nav class="nav">
+            <a href="#products">Products</a>
+            <a href="#services">Services</a>
+            <a href="#subscriptions">Subscriptions</a>
+            <a href="#digital">Digital</a>
+        </nav>
+    </header>
+    <main class="container">
+        <section class="products" id="products">
+            <div class="product-card">
+                <div class="product-image">&#128187;</div>
+                <div class="product-info">
+                    <span class="status demo">DEMO</span>
+                    <h3>Automation Empire Toolkit</h3>
+                    <p>Complete suite of automation tools for business process optimization.</p>
+                    <div class="price">£299.00</div>
+                    <button class="btn" onclick="alert('Demo Mode - Contact support@turnerworks.atlassian.net')">Request Demo</button>
+                </div>
+            </div>
+            <div class="product-card">
+                <div class="product-image">&#128736;</div>
+                <div class="product-info">
+                    <span class="status pending">PENDING</span>
+                    <h3>Development Consulting</h3>
+                    <p>Expert software development and AI integration consulting services.</p>
+                    <div class="price">From £150/hr</div>
+                    <button class="btn" onclick="alert('Coming Soon - Join waitlist')">Enquire Now</button>
+                </div>
+            </div>
+            <div class="product-card">
+                <div class="product-image">&#128274;</div>
+                <div class="product-info">
+                    <span class="status waitlist">WAITLIST</span>
+                    <h3>Pro Subscription</h3>
+                    <p>Monthly access to all Turner Works tools and priority support.</p>
+                    <div class="price">£49.99/mo</div>
+                    <button class="btn" onclick="alert('Join the waitlist at support@turnerworks.atlassian.net')">Join Waitlist</button>
+                </div>
+            </div>
+            <div class="product-card">
+                <div class="product-image">&#128218;</div>
+                <div class="product-info">
+                    <span class="status coming-soon">COMING SOON</span>
+                    <h3>AI Integration Guide</h3>
+                    <p>Comprehensive eBook on integrating AI agents into your workflow.</p>
+                    <div class="price">£29.99</div>
+                    <button class="btn" onclick="alert('Sign up for launch notification')">Get Notified</button>
+                </div>
+            </div>
+        </section>
+    </main>
+    <footer>
+        <p>&copy; 2026 Turner Works. All rights reserved.</p>
+        <p>Support: <a href="mailto:support@turnerworks.atlassian.net">support@turnerworks.atlassian.net</a></p>
+        <p>Jira CRM: <a href="https://turnerworks.atlassian.net">turnerworks.atlassian.net</a></p>
+    </footer>
+</body>
+</html>
